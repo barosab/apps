@@ -1,0 +1,20 @@
+<script>
+  (function() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Android detection
+    if (/android/i.test(userAgent)) {
+      window.location.replace("https://google.com");
+      return;
+    }
+
+    // iOS detection (iPhone, iPod, iPad)
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      window.location.replace("https://apps.apple.com/us/app/tappier/id6762313274");
+      return;
+    }
+
+    // Fallback for Desktop or other devices
+    window.location.replace("https://barosa.app/tappier");
+  })();
+</script>
